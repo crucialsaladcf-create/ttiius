@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Results</title>
+<meta name="description" content="Learn about our successful results and the impact we've made in the field.">
+<meta name="application-name" content="Assminds Tutorials">
+<meta name="keywords" content="Best coaching classes in Mumbai,JEE coaching,NEET coaching,Best coaching institute,JEE preparation,NEET preparation,Ass Minds Pvt Tutorials,Top JEE coaching,Top NEET coaching,Entrance exam coaching,JEE NEET academy">
+<meta property="og:title" content="Assminds Tutorials">
+<meta property="og:description" content="Learn about our successful results and the impact we've made in the field.">
+<meta property="og:site_name" content="Assminds Tutorials">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="assets/img/fav.png">
+<link rel="preload" href="assets/theme.css" as="style">
+<link rel="stylesheet" href="assets/theme.css">
+</head>
+<body>
+<header class="site-header" id="siteHeader">
+  <div class="container">
+    <div style="display:flex;justify-content:space-between;align-items:center;width:100%">
+      <a class="brand" href="index.html">Ass Minds</a>
+      <nav class="nav" id="desktopNav"></nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false"></button>
+    </div>
+    <nav class="mobile-nav" id="mobileNav"></nav>
+  </div>
+</header>
+
+<div id="app"></div>
+<div id="footerHost"></div>
+<div id="floatHost"></div>
+
+<script src="assets/ui.js"></script>
+<script src="assets/pages.js"></script>
+<script>
+(function () {
+  var active = "results";
+  var nav = document.getElementById('desktopNav');
+  var mob = document.getElementById('mobileNav');
+  var toggle = document.getElementById('menuToggle');
+  nav.innerHTML = NAV.map(function (n) {
+    return '<a class="nav__link' + (n[2] === active ? ' is-active' : '') + '" href="' + n[1] + '">' + n[0] + '</a>';
+  }).join('') + '<a class="btn btn--primary btn--sm nav__cta" href="enquiry.html">Enquire Now</a>';
+  mob.innerHTML = NAV.map(function (n) {
+    return '<a class="' + (n[2] === active ? 'is-active' : '') + '" href="' + n[1] + '">' + n[0] + '</a>';
+  }).join('') + '<a class="btn btn--primary" href="enquiry.html">Enquire Now</a>';
+  toggle.innerHTML = svg('menu', 'h-6 w-6');
+  document.getElementById('app').innerHTML = pageResults();
+  document.getElementById('footerHost').innerHTML = footer();
+  document.getElementById('floatHost').innerHTML = floats();
+  initSite();
+})();
+</script>
+</body>
+</html>
